@@ -1,0 +1,43 @@
+// Input.module.scss
+
+$border-color: #ccc;
+$focus-color: #1e90ff;
+$error-color: #d32f2f;
+$radius: 6px;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.input {
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  border: 1px solid $border-color;
+  border-radius: $radius;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+  &:focus {
+    border-color: $focus-color;
+    box-shadow: 0 0 0 2px rgba($focus-color, 0.2);
+  }
+
+  &.error {
+    border-color: $error-color;
+    &:focus {
+      box-shadow: 0 0 0 2px rgba($error-color, 0.2);
+    }
+  }
+}
+
+.helperText {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.errorText {
+  font-size: 0.875rem;
+  color: $error-color;
+}
